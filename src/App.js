@@ -47,16 +47,16 @@ function App() {
 
         {/* and here it will display that text */}
         <label for="miles" id="miles-range">
-          {miles}
+          {miles} Miles
         </label>
 
         <label for="hours" id="hours-label">
-          Choose your rate
+          Choose your hours
         </label>
         <select name="hours" id="hours">
           <option value="option 1">Between 5am and 9am</option>
           <option value="option 2">Between noon and 6pm</option>
-          <option value="option 3">All hours (Unpredicatable)</option>
+          <option value="option 3">All hours (Unpredictable)</option>
         </select>
       </div>
 
@@ -64,7 +64,7 @@ function App() {
         <h1 className="bar-graph-title">Rate Comparison</h1>
         <Bar
           data={data}
-          width={250}
+          width={320}
           height={150}
           options={{
             maintainAspectRatio: true,

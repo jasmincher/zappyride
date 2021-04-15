@@ -1,61 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+
 .App {
-  text-align: center;
+  /* text-align: center; */
   display: grid;
-  grid-template-areas: 
-  "options graph";
+  grid-template-areas: "options graph";
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+  font-family: "Montserrat", sans-serif;
+  background: rgb(235, 235, 235);
 }
 
-.select-options{
+.select-options {
   grid-area: options;
-  margin-left: 30px;
+  margin: auto;
   margin-top: 30px;
-
+  padding-top: 30px;
+  width: 250px;
+  height: 550px;
+  border: 1px solid rgb(211, 211, 211) ;
+  background: white;
+  border-radius: 8px;
 }
 
-.bar-graph{
+.select-options #rates-label {
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.select-options #rates {
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 30px;
+  padding: 0 5px;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: "Montserrat", sans-serif;
+  width: 210px;
+  height: 35px;
+}
+
+.select-options #rates:hover {
+  cursor: pointer;
+}
+
+.select-options #miles-label {
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.select-options #miles {
+  display: block;
+  margin-left: 20px;
+  font-weight: 400;
+  width: 210px;
+}
+
+
+/* styles slider begins*/
+.select-options input[type="range"]#miles {
+  -webkit-appearance: none;
+}
+
+.select-options input[type="range"]#miles::-webkit-slider-runnable-track {
+  background: #ddd;
+  border: none;
+  border-radius: 3px;
+  width: 210px;
+  height: 5px;
+}
+
+.select-options input[type="range"]#miles::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: rgb(58, 17, 184);
+  margin-top: -5px;
+}
+
+.select-options input[type="range"]#miles::-webkit-slider-thumb:hover {
+  cursor: pointer;
+}
+
+.select-options input[type="range"]#miles:focus {
+  outline: none;
+}
+
+.select-options input[type="range"]#miles:focus::-webkit-slider-runnable-track {
+  background: #ddd;
+}
+.select-options input[type="range"]#miles:focus::-webkit-slider-runnable-track:hover {
+  cursor: pointer;
+}
+
+/* styles slider ends */
+
+.select-options #miles-range {
+  display: block;
+  margin: 10px 0 30px 20px;
+  font-size: 14px;
+}
+
+.select-options #hours-label {
+  display: block;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.select-options #hours {
+  display: block;
+  margin-left: 20px;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  width: 210px;
+  height: 35px;
+  font-size: 14px;
+  padding: 0 5px;
+}
+
+.select-options #hours {
+ cursor: pointer;
+}
+
+.bar-graph {
   grid-area: graph;
+  background: white;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 8px;
+  height: 520px;
+  padding: 30px;
+  margin-right: 50px;
+  margin-top: 30px;
 }
 
-.select-options #rates-label{
-  display:block;
-  text-align: left;
-  margin-left: 20px;
-}
-
-.select-options #rates{
-  display: block;
-  margin-left: 20px;
-
-}
-
-.select-options #miles-label{
-  display: block;
-  text-align: left;
-  margin-left: 20px;
-}
-
-.select-options #miles{
-  display: block;
-  text-align: left;
-  margin-left: 20px;
-}
-
-.select-options #miles-range{
-  display: block;
-  text-align: left;
-  margin-left: 50px;
-}
-
-.select-options #hours-label{
-  display: block;
-  text-align: left;
-  margin-left: 20px;
-}
-
-.select-options #hours{
-  display: block;
-  text-align: left;
+.bar-graph h1.bar-graph-title {
   margin-left: 20px;
 }
