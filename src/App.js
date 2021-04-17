@@ -17,7 +17,8 @@ function App() {
       {
         label: "Electric Bill",
         data: [rateA, rateB],
-        backgroundColor: "rgb(58, 17, 184)",
+        backgroundColor: "rgb(81, 158, 172)",
+      
       },
       {
         label: "EV Bill",
@@ -27,7 +28,8 @@ function App() {
             ? 0.3 * miles * 0.2
             : 0.3 * miles * 0.08,
         ],
-        backgroundColor: "pink",
+        backgroundColor: "rgb(127, 81, 172)",
+ 
       },
     ],
   };
@@ -62,16 +64,14 @@ function App() {
   let rateATotal = data.datasets[0].data[0] + data.datasets[1].data[0]; //based on the graph I'm finding the electric bill plus the ev bill for rate A
   let rateBTotal = data.datasets[0].data[1] + data.datasets[1].data[1]; //based on the graph I'm finding the electric bill plus the ev bill for rate B
 
-  //turn into a function , write into a test?
-  let savings =
-    rateATotal < rateBTotal ? rateBTotal - rateATotal : rateATotal - rateBTotal; //here I'm substracting the lowest rate from the highest rate to get the amount of savings
+  let savings = rateATotal < rateBTotal ? rateBTotal - rateATotal : rateATotal - rateBTotal; //here I'm substracting the lowest rate from the highest rate to get the amount of savings
   let saveMore = rateATotal < rateBTotal ? "Rate A" : "Rate B"; //setting a string to use latter based on which rate is greater
 
   const switchRates = () => {
     if (saveMore === rate) {
-      return `You are on ${rate}, you are already on the cheapest rate`;
+      return <p>You are on <span className="bolder">{rate}</span>, you are already on the cheapest rate</p>
     } else {
-      return `You are currently on ${rate}. You can save more if you switch to ${saveMore}, and you can save $${savings.toFixed(2)}`;
+      return <p>You are currently on <span className="bolder">{rate}</span>. You can save more if you switch to <span className="bolder">{saveMore}</span>, and you can save <span className="green">${savings.toFixed(2)}</span></p>
     }
   };
 
@@ -124,15 +124,39 @@ function App() {
       </div>
 
       <div className="bar-graph">
-
         <div id="switch-rates">
-        <h1 className="bar-graph-title">Rate Comparison</h1>
-        
-        <p>{switchRates()} </p>
+          <h1 className="bar-graph-title">Rate Comparison</h1>
 
+          <p>{switchRates()} </p>
         </div>
-        <Bar data={data} options={options} width={320} height={150} id="stacked-graph"/>
+        <Bar
+          data={data}
+          options={options}
+          width={320}
+          height={150}
+          id="stacked-graph"
+        />
       </div>
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="custom-shape">
+          <path
+            fill="rgb(127, 81, 172)"
+            fill-opacity="1"
+            d="M0,256L80,229.3C160,203,320,149,480,154.7C640,160,800,224,960,224C1120,224,1280,160,1360,128L1440,96L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+          ></path>
+        </svg>
+
+{/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="custom-shape">
+  <path fill="rgb(127, 81, 172)" fill-opacity="1" d="M0,64L80,90.7C160,117,320,171,480,208C640,245,800,267,960,240C1120,213,1280,139,1360,101.3L1440,64L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+</svg> */}
+
+{/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" className="custom-shape">
+  <path fill="rgb(127, 81, 172)" fill-opacity="1" d="M0,160L80,144C160,128,320,96,480,117.3C640,139,800,213,960,240C1120,267,1280,245,1360,234.7L1440,224L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+</svg> */}
+
+
+
     </div>
   );
 }
