@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
 
+
 .App { 
   grid-template-areas: "options graph";
   width: 100%;
@@ -7,9 +8,11 @@
   background: rgb(235, 235, 235);
   display: grid;
   font-family: "Montserrat", sans-serif;
-  
 }
 
+.App > * {
+  z-index: 10;
+}
 
 .select-options {
   grid-area: options;
@@ -83,7 +86,7 @@
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: rgb(58, 17, 184);
+  background: rgb(127, 81, 172);
   margin-top: -5px;
 }
 
@@ -148,7 +151,7 @@
 }
 
 .bar-graph #switch-rates {
-  background: rgb(201, 199, 199);
+  background: rgb(211, 211, 211);
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   padding: 10px 20px;
@@ -163,4 +166,20 @@
 .bar-graph #switch-rates p{
   line-height: 5px;
   font-size: 14px;
+}
+
+.bolder{
+  font-weight: bolder;
+}
+
+.green{
+  color:green;
+  font-weight: bolder;
+}
+.custom-shape{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  z-index: 0;
+  margin: 0;
 }
