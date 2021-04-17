@@ -71,7 +71,7 @@ function App() {
     if (saveMore === rate) {
       return `You are on ${rate}, you are already on the cheapest rate`;
     } else {
-      return `You are currently on ${rate}, you can save more if you choose ${saveMore}, you can save $${savings.toFixed(2)}`;
+      return `You are currently on ${rate}. You can save more if you switch to ${saveMore}, and you can save $${savings.toFixed(2)}`;
     }
   };
 
@@ -111,7 +111,7 @@ function App() {
         </label>
 
         <label for="hours" id="hours-label">
-          Choose your hours
+          Charging hours
         </label>
         <select
           name="hours"
@@ -124,12 +124,14 @@ function App() {
       </div>
 
       <div className="bar-graph">
-        <h1 className="bar-graph-title">Rate Comparison</h1>
 
         <div id="switch-rates">
-          {switchRates()}
+        <h1 className="bar-graph-title">Rate Comparison</h1>
+        
+        <p>{switchRates()} </p>
+
         </div>
-        <Bar data={data} options={options} width={320} height={150} />
+        <Bar data={data} options={options} width={320} height={150} id="stacked-graph"/>
       </div>
     </div>
   );
