@@ -36,6 +36,14 @@ function App() {
 
   //parameters for graph
   const options = {
+    layout: {
+      padding: {
+        left: 20,
+        right: 20,
+        top: 30,
+        bottom: 80,
+      },
+    },
     scales: {
       yAxes: [
         {
@@ -135,8 +143,7 @@ function App() {
         <Bar
           data={data}
           options={options}
-          width={320}
-          height={150}
+          width={300}
           id="stacked-graph"
         />
       </div>
